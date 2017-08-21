@@ -1,0 +1,68 @@
+Initialize engine version: 5.6.2f1 (a2913c821e27)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 540M (ID=0xdf4)
+    Vendor:   NVIDIA
+    VRAM:     2000 MB
+    Driver:   22.21.13.8476
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\restaurantgame\RestaurantGame\dbg_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\restaurantgame\RestaurantGame\dbg_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\restaurantgame\RestaurantGame\dbg_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\restaurantgame\RestaurantGame\dbg_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\restaurantgame\RestaurantGame\dbg_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\restaurantgame\RestaurantGame\dbg_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\restaurantgame\RestaurantGame\dbg_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\restaurantgame\RestaurantGame\dbg_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.274 seconds
+Platform assembly: D:\restaurantgame\RestaurantGame\dbg_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\restaurantgame\RestaurantGame\dbg_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+The referenced script on this Behaviour (Game Object 'Crafting') is missing!
+ 
+(Filename:  Line: 1743)
+
+The referenced script on this Behaviour (Game Object 'Panel (9)') is missing!
+ 
+(Filename:  Line: 1743)
+
+UnloadTime: 1.669925 ms
+cutting_station
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+cutting_station
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+INTERACTED
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Player.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Player.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Player.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Player.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 348 -> priority: 1 
+  Thread -> id: d174 -> priority: 1 

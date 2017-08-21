@@ -22,7 +22,7 @@ public class Navigation : MonoBehaviour {
     }
 
 
-    public int maxSize {
+    public int maxSize {    
         get { return gridSizeX * gridSizeY; }
     }
 

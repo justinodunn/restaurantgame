@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
+using System;
 
 public class PathfindingAgent : MonoBehaviour {
+
+    Action OnDestinationReached;
 
     public float movementSpeed;
     Rigidbody2D rb;
@@ -14,11 +17,13 @@ public class PathfindingAgent : MonoBehaviour {
     Vector2[] path;
     int targetIndex;
 
-    public void MoveToTarget(Transform target) {
+    public void MoveToTarget(Transform target, Action onDestinationReached) {
         Navigation.RequestPath(transform.position, target.position, OnPathFound);
+        OnDestinationReached = onDestinationReached;
     }
-    public void MoveToTarget(Vector2 target) {
+    public void MoveToTarget(Vector2 target, Action onDestinationReached) {
         Navigation.RequestPath(transform.position, target, OnPathFound);
+        OnDestinationReached = onDestinationReached;
     }
 
     private void OnPathFound(Vector2[] newPath, bool success) {
@@ -30,22 +35,29 @@ public class PathfindingAgent : MonoBehaviour {
     }
 
     IEnumerator FollowPath() {
-        Vector2 currentWaypoint = path[0];
+        if (path.Length > 0) {
+            Vector2 currentWaypoint = path[0];
             targetIndex = 0;
 
-        while (true) {
-            print("running");
-            if (transform.position.x == currentWaypoint.x && transform.position.y == currentWaypoint.y) {
-                targetIndex++;
-                if (targetIndex >= path.Length) {
-                    yield break;
+            while (true) {
+                if (transform.position.x == currentWaypoint.x && transform.position.y == currentWaypoint.y) {
+                    targetIndex++;
+                    if (targetIndex >= path.Length) {
+                        if (OnDestinationReached != null)
+                            OnDestinationReached();
+                        yield break;
+                    }
+                    else {
+                        currentWaypoint = path[targetIndex];
+                    }
                 }
-                else {
-                currentWaypoint = path[targetIndex];
-                }
+                rb.MovePosition(Vector3.MoveTowards(transform.position, new Vector3(currentWaypoint.x, currentWaypoint.y, transform.position.z), movementSpeed * Time.deltaTime));
+                yield return null;
             }
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(currentWaypoint.x, currentWaypoint.y, transform.position.z), movementSpeed * Time.deltaTime);
-            yield return null;
+        }
+        else {
+            if (OnDestinationReached != null)
+                OnDestinationReached();
         }
     }
 
